@@ -55,9 +55,9 @@ export default function HeroSection() {
 
         {/* Divider line with label */}
         <div className="animate-fade-in-up delay-300 flex items-center justify-center gap-4 mb-4">
-          <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#333]" />
+          <div className="h-px w-20 bg-linear-to-r from-transparent to-[#333]" />
           <span className="label-mono text-[#555]">.//dnVsdG91cmpvbA==.</span>
-          <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#333]" />
+          <div className="h-px w-20 bg-linear-to-l from-transparent to-[#333]" />
         </div>
 
         {/* Surname */}
@@ -111,7 +111,7 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-fade-in-up delay-900">
         <span className="label-mono text-[#444] text-[10px]">SCROLL</span>
-        <div className="w-px h-12 bg-gradient-to-b from-[#444] to-transparent" />
+        <div className="w-px h-12 bg-linear-to-b from-[#444] to-transparent" />
       </div>
     </section>
   );

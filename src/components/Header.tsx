@@ -65,7 +65,7 @@ export default function Header() {
           >
             <span
               className={`block w-5 h-px bg-[#f0f0f0] transition-all duration-300 origin-center ${
-                open ? "rotate-45 translate-y-[6px]" : ""
+                open ? "rotate-45 translate-y-1.5" : ""
               }`}
             />
             <span
@@ -75,7 +75,7 @@ export default function Header() {
             />
             <span
               className={`block w-5 h-px bg-[#f0f0f0] transition-all duration-300 origin-center ${
-                open ? "-rotate-45 -translate-y-[6px]" : ""
+                open ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             />
           </button>

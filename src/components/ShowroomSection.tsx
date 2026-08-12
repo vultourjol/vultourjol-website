@@ -256,7 +256,7 @@ function ProjectCard({
       </div>
 
       {/* Photo / placeholder area */}
-      <div className="relative mb-6 w-full aspect-[8/5] bg-[#0d0d0d] border border-[#1a1a1a] overflow-hidden">
+      <div className="relative mb-6 w-full aspect-8/5 bg-[#0d0d0d] border border-[#1a1a1a] overflow-hidden">
         {project.photos?.[0] ? (
           <Image
             src={project.photos[0].src}
@@ -423,7 +423,7 @@ function ProjectModal({
   const photo = photos[index];
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-8">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/90 backdrop-blur-sm"
@@ -449,7 +449,7 @@ function ProjectModal({
         {photos.length > 0 && photo ? (
           <>
             {/* Main image */}
-            <div className="relative w-full aspect-[8/5] bg-[#080808]">
+            <div className="relative w-full aspect-8/5 bg-[#080808]">
               <Image
                 src={photo.src}
                 alt={photo.caption}
@@ -457,20 +457,6 @@ function ProjectModal({
                 sizes="(max-width: 1024px) 100vw, 1024px"
                 className="object-cover"
               />
-              <button
-                onClick={prev}
-                aria-label="Previous photo"
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-[#222] bg-black/60 text-[#666] hover:text-white hover:border-[#555] transition-colors"
-              >
-                <ArrowIcon direction="left" />
-              </button>
-              <button
-                onClick={next}
-                aria-label="Next photo"
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-[#222] bg-black/60 text-[#666] hover:text-white hover:border-[#555] transition-colors"
-              >
-                <ArrowIcon direction="right" />
-              </button>
             </div>
 
             {/* Caption */}
@@ -496,7 +482,7 @@ function ProjectModal({
                       : "border-transparent opacity-40 hover:opacity-80"
                   }`}
                 >
-                  <div className="w-24 aspect-[8/5] relative">
+                  <div className="w-24 aspect-8/5 relative">
                     <Image
                       src={p.src}
                       alt={p.caption}

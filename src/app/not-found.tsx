@@ -47,9 +47,9 @@ export default function NotFound() {
 
         {/* Divider line with label */}
         <div className="animate-fade-in-up delay-300 flex items-center justify-center gap-4 mb-6">
-          <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#333]" />
+          <div className="h-px w-20 bg-linear-to-r from-transparent to-[#333]" />
           <span className="label-mono text-[#555]">.//not.found.</span>
-          <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#333]" />
+          <div className="h-px w-20 bg-linear-to-l from-transparent to-[#333]" />
         </div>
 
         {/* Message */}
