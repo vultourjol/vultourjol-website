@@ -18,12 +18,12 @@ const projects: Project[] = [
     id: "proj-01",
     num: "01",
     title: "PROJECT_ALPHA",
-    subtitle: "Веб-приложение",
+    subtitle: "Web Application",
     tags: ["Next.js", "TypeScript", "PostgreSQL"],
-    year: "2025",
+    year: "2026",
     status: "WIP",
     description:
-      "Полнофункциональное веб-приложение с авторизацией, базой данных и REST API. Фото-материалы будут добавлены позже.",
+      "Fully functional web application with authentication, database and REST API. Photo materials will be added later.",
     repoUrl: "#",
     liveUrl: "#",
   },
@@ -31,24 +31,24 @@ const projects: Project[] = [
     id: "proj-02",
     num: "02",
     title: "PROJECT_BETA",
-    subtitle: "Мобильное приложение",
+    subtitle: "Mobile Application",
     tags: ["React Native", "Node.js", "MongoDB"],
-    year: "2025",
+    year: "2026",
     status: "CONCEPT",
     description:
-      "Кроссплатформенное мобильное приложение. Репозиторий и демо будут добавлены после завершения.",
+      "Cross-platform mobile application. Repository and demo will be added after completion.",
     repoUrl: "#",
   },
   {
     id: "proj-03",
     num: "03",
     title: "PROJECT_GAMMA",
-    subtitle: "CLI утилита",
+    subtitle: "CLI Utility",
     tags: ["Python", "Click", "Docker"],
-    year: "2024",
+    year: "2026",
     status: "LIVE",
     description:
-      "Инструмент командной строки для автоматизации задач разработки. Доступен на GitHub.",
+      "Command-line tool for development task automation. Available on GitHub.",
     repoUrl: "#",
     liveUrl: "#",
   },
@@ -56,24 +56,24 @@ const projects: Project[] = [
     id: "proj-04",
     num: "04",
     title: "PROJECT_DELTA",
-    subtitle: "Алгоритмы / DS",
+    subtitle: "Algorithms / DS",
     tags: ["C++", "Algorithms", "Data Structures"],
-    year: "2024",
+    year: "2026",
     status: "LIVE",
     description:
-      "Коллекция реализаций алгоритмов и структур данных для учебных целей.",
+      "Collection of algorithm implementations and data structures for educational purposes.",
     repoUrl: "#",
   },
   {
     id: "proj-05",
     num: "05",
     title: "PROJECT_EPSILON",
-    subtitle: "Машинное обучение",
+    subtitle: "Machine Learning",
     tags: ["Python", "PyTorch", "NumPy"],
-    year: "2025",
+    year: "2026",
     status: "WIP",
     description:
-      "Эксперименты с нейронными сетями. Результаты и датасеты будут опубликованы.",
+      "Experiments with neural networks. Results and datasets will be published.",
     repoUrl: "#",
   },
   {
@@ -82,10 +82,10 @@ const projects: Project[] = [
     title: "PROJECT_ZETA",
     subtitle: "Open Source",
     tags: ["TypeScript", "OSS"],
-    year: "2025",
+    year: "2026",
     status: "CONCEPT",
     description:
-      "Открытый проект в разработке. Идеи и концепция формируются.",
+      "Open source project in development. Ideas and concepts are being formed.",
   },
 ];
 
@@ -133,10 +133,10 @@ export default function ShowroomSection() {
         {/* Bottom label */}
         <div className="reveal-on-scroll mt-16 flex items-center justify-between">
           <span className="label-mono text-[#2a2a2a]">
-            {projects.length} ПРОЕКТОВ / ОБНОВЛЯЕТСЯ
+            {projects.length} PROJECTS / UPDATED
           </span>
           <div className="flex items-center gap-3">
-            <span className="label-mono text-[#2a2a2a]">СТАТУСЫ:</span>
+            <span className="label-mono text-[#2a2a2a]">STATUSES:</span>
             {(["LIVE", "WIP", "CONCEPT"] as const).map((s) => (
               <span key={s} className="flex items-center gap-1.5">
                 <span
@@ -171,7 +171,7 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Pixel art placeholder pattern */}
         <div className="absolute inset-0 pixel-grid opacity-30" />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-          <div className="text-[#222] text-xs label-mono">[ ФОТО / СКРИНШОТ ]</div>
+          <div className="text-[#222] text-xs label-mono">[ PHOTO / SCREENSHOT ]</div>
           <div className="text-[#1a1a1a] text-[10px] label-mono">PLACEHOLDER</div>
         </div>
         {/* Corner pixels */}
@@ -213,7 +213,22 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.repoUrl}
               className="label-mono text-[#333] hover:text-[#888] transition-colors text-[10px] flex items-center gap-1"
             >
-              REPO <span>↗</span>
+              REPO{" "}
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 20 20"
+                fill="none"
+                className="inline-block"
+              >
+                <rect x="7" y="7" width="9" height="9" stroke="currentColor" strokeWidth="1" />
+                <path
+                  d="M3 11V5.5A1.5 1.5 0 014.5 4H10"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="square"
+                />
+              </svg>
             </a>
           )}
           {project.liveUrl && (
@@ -221,11 +236,26 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.liveUrl}
               className="label-mono text-[#333] hover:text-[#888] transition-colors text-[10px] flex items-center gap-1"
             >
-              LIVE <span>↗</span>
+              LIVE{" "}
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 20 20"
+                fill="none"
+                className="inline-block"
+              >
+                <rect x="7" y="7" width="9" height="9" stroke="currentColor" strokeWidth="1" />
+                <path
+                  d="M3 11V5.5A1.5 1.5 0 014.5 4H10"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="square"
+                />
+              </svg>
             </a>
           )}
           {!project.repoUrl && !project.liveUrl && (
-            <span className="label-mono text-[#222] text-[10px]">СКОРО</span>
+            <span className="label-mono text-[#222] text-[10px]">SOON</span>
           )}
         </div>
       </div>
