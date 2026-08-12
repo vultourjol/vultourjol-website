@@ -24,28 +24,8 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "proj-01",
-    num: "01",
-    title: "PRODBYLELYA",
-    subtitle: "Website / Web Application",
-    tags: ["HTML", "JavaScript", "TypeScript", "TailwindCSS"],
-    year: "2024",
-    status: "LIVE",
-    description:
-      "A portfolio website for a producer and editor.",
-    repoUrl: "https://github.com/vultourjol/film-producer-website",
-    liveUrl: "https://vultourjol.github.io/film-producer-website/",
-    photos: [
-      { src: "/images/project-1/1.1.webp", caption: "SCREENSHOT 01" },
-      { src: "/images/project-1/1.2.webp", caption: "SCREENSHOT 02" },
-      { src: "/images/project-1/1.3.webp", caption: "SCREENSHOT 03" },
-      { src: "/images/project-1/1.4.webp", caption: "SCREENSHOT 04" },
-      { src: "/images/project-1/1.5.webp", caption: "SCREENSHOT 05" },
-    ],
-  },
-  {
     id: "proj-02",
-    num: "02",
+    num: "01",
     title: "16/9 CREATIVE STUDIO",
     subtitle: "Website / Web Application",
     tags: ["React Native", "Node.js", "MongoDB"],
@@ -62,6 +42,26 @@ const projects: Project[] = [
       { src: "/images/project-2/2.4.webp", caption: "SCREENSHOT 04" },
       { src: "/images/project-2/2.5.webp", caption: "SCREENSHOT 05" },
       { src: "/images/project-2/2.6.webp", caption: "SCREENSHOT 06" },
+    ],
+  },
+  {
+    id: "proj-01",
+    num: "02",
+    title: "PRODBYLELYA",
+    subtitle: "Website / Web Application",
+    tags: ["HTML", "JavaScript", "TypeScript", "TailwindCSS"],
+    year: "2024",
+    status: "LIVE",
+    description:
+      "A portfolio website for a producer and editor.",
+    repoUrl: "https://github.com/vultourjol/film-producer-website",
+    liveUrl: "https://vultourjol.github.io/film-producer-website/",
+    photos: [
+      { src: "/images/project-1/1.1.webp", caption: "SCREENSHOT 01" },
+      { src: "/images/project-1/1.2.webp", caption: "SCREENSHOT 02" },
+      { src: "/images/project-1/1.3.webp", caption: "SCREENSHOT 03" },
+      { src: "/images/project-1/1.4.webp", caption: "SCREENSHOT 04" },
+      { src: "/images/project-1/1.5.webp", caption: "SCREENSHOT 05" },
     ],
   },
   {

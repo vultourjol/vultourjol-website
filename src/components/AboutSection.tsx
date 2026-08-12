@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const stack = [
   { cat: "FRONTEND", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
   { cat: "BACKEND", items: ["Node.js", "Python", "FastAPI", "PostgreSQL"] },
@@ -46,19 +48,32 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* Left — Bio */}
           <div className="reveal-slide-left space-y-12">
-            {/* Avatar placeholder */}
-            <div className="relative w-48 h-48 border border-[#1a1a1a] bg-[#0d0d0d] overflow-hidden">
-              <div className="absolute inset-0 pixel-grid opacity-40" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="label-mono text-[#222] text-xs text-center">
-                  [ PHOTO ]<br />CLASSIFIED
-                </span>
+            {/* Photo */}
+            <div className="relative inline-block">
+              {/* Offset frame */}
+              <div className="absolute -inset-2.5 border border-[#222] translate-x-2 translate-y-2" />
+              <div className="relative w-48 h-48 border border-[#1a1a1a] bg-[#0d0d0d] overflow-hidden">
+                <Image
+                  src="/images/whoami.webp"
+                  alt="Egor Nurullin"
+                  fill
+                  sizes="192px"
+                  className="object-cover"
+                />
+                {/* Corner markers */}
+                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#444]" />
+                <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#444]" />
+                <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#444]" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#444]" />
               </div>
-              {/* Corner markers */}
-              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#333]" />
-              <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#333]" />
-              <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#333]" />
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#333]" />
+              {/* Bottom label */}
+              <div className="absolute -bottom-3 left-2 px-2 py-0.5 bg-[#080808] border border-[#1a1a1a] label-mono text-[#444] text-[10px]">
+                WHOAMI.WEBP
+              </div>
+              {/* Top-right tag */}
+              <div className="absolute -top-3 right-2 px-2 py-0.5 bg-[#080808] border border-[#1a1a1a] label-mono text-[#222] text-[10px]">
+                E.N.
+              </div>
             </div>
 
             <div className="space-y-4">
@@ -74,7 +89,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-3 gap-px bg-[#111]">
               {[
                 { n: "3+", l: "years of coding experience" },
-                { n: "6+", l: "projects" },
+                { n: "5+", l: "projects" },
                 { n: "∞", l: "interests" },
               ].map((s) => (
                 <div key={s.l} className="bg-[#080808] p-4 text-center">

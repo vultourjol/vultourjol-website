@@ -56,7 +56,7 @@ export default function HeroSection() {
         {/* Divider line with label */}
         <div className="animate-fade-in-up delay-300 flex items-center justify-center gap-4 mb-4">
           <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#333]" />
-          <span className="label-mono text-[#555]">.//web.dev.</span>
+          <span className="label-mono text-[#555]">.//dnVsdG91cmpvbA==.</span>
           <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#333]" />
         </div>
 
