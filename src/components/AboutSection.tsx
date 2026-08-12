@@ -4,7 +4,7 @@ const stack = [
   { cat: "FRONTEND", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
   { cat: "BACKEND", items: ["Node.js", "Python", "FastAPI", "PostgreSQL"] },
   { cat: "DEVOPS", items: ["Git", "Docker", "Linux", "CI/CD"] },
-  { cat: "ДРУГОЕ", items: ["Алгоритмы", "ООП", "REST API", "GraphQL"] },
+  { cat: "OTHER", items: ["Algorithms", "OOP", "REST API", "GraphQL"] },
 ];
 
 const timeline = [

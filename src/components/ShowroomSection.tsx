@@ -1,5 +1,13 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
+
+interface ProjectPhoto {
+  src: string;
+  caption: string;
+}
+
 interface Project {
   id: string;
   num: string;
@@ -11,83 +19,140 @@ interface Project {
   description: string;
   repoUrl?: string;
   liveUrl?: string;
+  photos?: ProjectPhoto[];
 }
 
 const projects: Project[] = [
   {
     id: "proj-01",
     num: "01",
-    title: "PROJECT_ALPHA",
-    subtitle: "Web Application",
-    tags: ["Next.js", "TypeScript", "PostgreSQL"],
-    year: "2026",
-    status: "WIP",
+    title: "PRODBYLELYA",
+    subtitle: "Website / Web Application",
+    tags: ["HTML", "JavaScript", "TypeScript", "TailwindCSS"],
+    year: "2024",
+    status: "LIVE",
     description:
-      "Fully functional web application with authentication, database and REST API. Photo materials will be added later.",
-    repoUrl: "#",
-    liveUrl: "#",
+      "A portfolio website for a producer and editor.",
+    repoUrl: "https://github.com/vultourjol/film-producer-website",
+    liveUrl: "https://vultourjol.github.io/film-producer-website/",
+    photos: [
+      { src: "/images/project-1/1.1.webp", caption: "SCREENSHOT 01" },
+      { src: "/images/project-1/1.2.webp", caption: "SCREENSHOT 02" },
+      { src: "/images/project-1/1.3.webp", caption: "SCREENSHOT 03" },
+      { src: "/images/project-1/1.4.webp", caption: "SCREENSHOT 04" },
+      { src: "/images/project-1/1.5.webp", caption: "SCREENSHOT 05" },
+    ],
   },
   {
     id: "proj-02",
     num: "02",
-    title: "PROJECT_BETA",
-    subtitle: "Mobile Application",
+    title: "16/9 CREATIVE STUDIO",
+    subtitle: "Website / Web Application",
     tags: ["React Native", "Node.js", "MongoDB"],
     year: "2026",
-    status: "CONCEPT",
+    status: "LIVE",
     description:
-      "Cross-platform mobile application. Repository and demo will be added after completion.",
-    repoUrl: "#",
+      "A showcase website for a video production studio. ",
+    repoUrl: "https://github.com/vultourjol/16-9-website",
+    liveUrl: "https://16-9-website.vercel.app/",
+    photos: [
+      { src: "/images/project-2/2.1.webp", caption: "SCREENSHOT 01" },
+      { src: "/images/project-2/2.2.webp", caption: "SCREENSHOT 02" },
+      { src: "/images/project-2/2.3.webp", caption: "SCREENSHOT 03" },
+      { src: "/images/project-2/2.4.webp", caption: "SCREENSHOT 04" },
+      { src: "/images/project-2/2.5.webp", caption: "SCREENSHOT 05" },
+      { src: "/images/project-2/2.6.webp", caption: "SCREENSHOT 06" },
+    ],
   },
   {
     id: "proj-03",
     num: "03",
-    title: "PROJECT_GAMMA",
-    subtitle: "CLI Utility",
-    tags: ["Python", "Click", "Docker"],
-    year: "2026",
-    status: "LIVE",
+    title: "HEATMAX PRO",
+    subtitle: "Website / Web Application",
+    tags: ["HTML", "JavaScript", "TypeScript", "TailwindCSS"],
+    year: "2025",
+    status: "WIP",
     description:
-      "Command-line tool for development task automation. Available on GitHub.",
-    repoUrl: "#",
-    liveUrl: "#",
+      "An online shop website selling heating boilers.",
+    repoUrl: "https://github.com/vultourjol/boilers-website",
+    liveUrl: "https://vultourjol.github.io/boilers-website/",
+    photos: [
+      { src: "/images/project-3/3.1.webp", caption: "SCREENSHOT 01" },
+      { src: "/images/project-3/3.2.webp", caption: "SCREENSHOT 02" },
+      { src: "/images/project-3/3.3.webp", caption: "SCREENSHOT 03" },
+      { src: "/images/project-3/3.4.webp", caption: "SCREENSHOT 04" },
+      { src: "/images/project-3/3.5.webp", caption: "SCREENSHOT 05" },
+      { src: "/images/project-3/3.6.webp", caption: "SCREENSHOT 06" },
+    ],
   },
   {
     id: "proj-04",
     num: "04",
-    title: "PROJECT_DELTA",
-    subtitle: "Algorithms / DS",
-    tags: ["C++", "Algorithms", "Data Structures"],
+    title: "video-downloader",
+    subtitle: "Desktop application",
+    tags: ["yt-dlp", "ffmpeg", "Python"],
     year: "2026",
     status: "LIVE",
     description:
-      "Collection of algorithm implementations and data structures for educational purposes.",
-    repoUrl: "#",
+      "A macOS application for downloading videos up to 4K and audio from videos.",
+    repoUrl: "/src/app/not-found.tsx",
+    photos: [
+      { src: "/images/project-4/4.1.webp", caption: "SCREENSHOT 01" },
+    ],
   },
   {
     id: "proj-05",
     num: "05",
-    title: "PROJECT_EPSILON",
-    subtitle: "Machine Learning",
-    tags: ["Python", "PyTorch", "NumPy"],
+    title: "media-converter",
+    subtitle: "Desktop application",
+    tags: ["ffmpeg", "ffprobe", "python"],
     year: "2026",
     status: "WIP",
     description:
-      "Experiments with neural networks. Results and datasets will be published.",
-    repoUrl: "#",
+      "A macOS application for converting any media files into all available formats.",
+    repoUrl: "/src/app/not-found.tsx",
+    photos: [
+      { src: "/images/project-5/5.1.webp", caption: "SCREENSHOT 01" },
+      { src: "/images/project-5/5.2.webp", caption: "SCREENSHOT 02" },
+    ],
   },
   {
     id: "proj-06",
     num: "06",
     title: "PROJECT_ZETA",
     subtitle: "Open Source",
-    tags: ["TypeScript", "OSS"],
+    tags: ["..//LOADING..", "..//00110100 00110000 00110100.."],
     year: "2026",
     status: "CONCEPT",
     description:
       "Open source project in development. Ideas and concepts are being formed.",
   },
 ];
+
+for (const p of projects) {
+  if (!p.photos) {
+    p.photos = Array.from({ length: 4 }, (_, i) => ({
+      src: photoPlaceholder(p.num, i),
+      caption: `SCREENSHOT 0${i + 1}`,
+    }));
+  }
+}
+
+function photoPlaceholder(num: string, i: number): string {
+  const shades = ["#0b0b0b", "#0d0d0d", "#101010", "#121212"];
+  const bg = shades[i % shades.length];
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" fill="${bg}"/>
+<defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#161616" stroke-width="1"/></pattern></defs>
+<rect width="1200" height="800" fill="url(#g)"/>
+<rect x="1" y="1" width="1198" height="798" fill="none" stroke="#1f1f1f" stroke-width="1"/>
+<text x="60" y="80" fill="#333" font-family="monospace" font-size="24" letter-spacing="6">[ PHOTO / SCREENSHOT ]</text>
+<text x="60" y="116" fill="#1c1c1c" font-family="monospace" font-size="16" letter-spacing="6">PLACEHOLDER</text>
+<text x="1140" y="760" fill="#151515" font-family="monospace" font-size="200" text-anchor="end">${num}</text>
+<text x="60" y="760" fill="#2a2a2a" font-family="monospace" font-size="16" letter-spacing="6">${String(i + 1).padStart(2, "0")} / 04</text>
+</svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
 
 const statusColors: Record<Project["status"], string> = {
   LIVE: "#f0f0f0",
@@ -96,6 +161,8 @@ const statusColors: Record<Project["status"], string> = {
 };
 
 export default function ShowroomSection() {
+  const [active, setActive] = useState<Project | null>(null);
+
   return (
     <section id="showroom" className="relative py-40 px-6">
       {/* Subtle grid bg */}
@@ -117,8 +184,6 @@ export default function ShowroomSection() {
             <span className="text-[#333]">Projects</span>
           </h2>
           <p className="mt-6 text-[#444] text-sm max-w-md label-mono leading-relaxed">
-            Placeholders for future projects.
-            <br />
             Photos, links and descriptions will be added as they become available.
           </p>
         </div>
@@ -126,7 +191,11 @@ export default function ShowroomSection() {
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#151515]">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onOpen={() => setActive(project)}
+            />
           ))}
         </div>
 
@@ -151,13 +220,33 @@ export default function ShowroomSection() {
           </div>
         </div>
       </div>
+
+      {/* Project gallery modal */}
+      {active && <ProjectModal project={active} onClose={() => setActive(null)} />}
     </section>
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  onOpen,
+}: {
+  project: Project;
+  onOpen: () => void;
+}) {
   return (
-    <div className="scale-on-scroll group relative bg-[#080808] p-8 card-hover cursor-default border border-transparent hover:border-[#1f1f1f]">
+    <div
+      onClick={onOpen}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen();
+        }
+      }}
+      className="scale-on-scroll group relative bg-[#080808] p-8 card-hover cursor-pointer border border-transparent hover:border-[#1f1f1f]"
+    >
       {/* Number */}
       <div className="flex items-center justify-between mb-8">
         <span className="label-mono text-[#222] text-2xl font-light">
@@ -166,19 +255,31 @@ function ProjectCard({ project }: { project: Project }) {
         <StatusBadge status={project.status} />
       </div>
 
-      {/* Placeholder image area */}
-      <div className="relative mb-6 w-full aspect-video bg-[#0d0d0d] border border-[#1a1a1a] overflow-hidden">
-        {/* Pixel art placeholder pattern */}
-        <div className="absolute inset-0 pixel-grid opacity-30" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-          <div className="text-[#222] text-xs label-mono">[ PHOTO / SCREENSHOT ]</div>
-          <div className="text-[#1a1a1a] text-[10px] label-mono">PLACEHOLDER</div>
-        </div>
-        {/* Corner pixels */}
-        <div className="absolute top-2 left-2 w-1.5 h-1.5 bg-[#222]" />
-        <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-[#222]" />
-        <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-[#222]" />
-        <div className="absolute bottom-2 right-2 w-1.5 h-1.5 bg-[#222]" />
+      {/* Photo / placeholder area */}
+      <div className="relative mb-6 w-full aspect-[8/5] bg-[#0d0d0d] border border-[#1a1a1a] overflow-hidden">
+        {project.photos?.[0] ? (
+          <Image
+            src={project.photos[0].src}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+          />
+        ) : (
+          <>
+            {/* Pixel art placeholder pattern */}
+            <div className="absolute inset-0 pixel-grid opacity-30" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              <div className="text-[#222] text-xs label-mono">[ PHOTO / SCREENSHOT ]</div>
+              <div className="text-[#1a1a1a] text-[10px] label-mono">PLACEHOLDER</div>
+            </div>
+            {/* Corner pixels */}
+            <div className="absolute top-2 left-2 w-1.5 h-1.5 bg-[#222]" />
+            <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-[#222]" />
+            <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-[#222]" />
+            <div className="absolute bottom-2 right-2 w-1.5 h-1.5 bg-[#222]" />
+          </>
+        )}
       </div>
 
       {/* Title */}
@@ -211,12 +312,13 @@ function ProjectCard({ project }: { project: Project }) {
           {project.repoUrl && (
             <a
               href={project.repoUrl}
-              className="label-mono text-[#333] hover:text-[#888] transition-colors text-[10px] flex items-center gap-1"
+              onClick={(e) => e.stopPropagation()}
+              className="px-4 py-2 border border-[#1f1f1f] label-mono text-[#666] hover:text-[#f0f0f0] hover:border-[#555] transition-all text-xs flex items-center gap-2"
             >
               REPO{" "}
               <svg
-                width="10"
-                height="10"
+                width="14"
+                height="14"
                 viewBox="0 0 20 20"
                 fill="none"
                 className="inline-block"
@@ -234,12 +336,13 @@ function ProjectCard({ project }: { project: Project }) {
           {project.liveUrl && (
             <a
               href={project.liveUrl}
-              className="label-mono text-[#333] hover:text-[#888] transition-colors text-[10px] flex items-center gap-1"
+              onClick={(e) => e.stopPropagation()}
+              className="px-4 py-2 border border-[#1f1f1f] label-mono text-[#666] hover:text-[#f0f0f0] hover:border-[#555] transition-all text-xs flex items-center gap-2"
             >
               LIVE{" "}
               <svg
-                width="10"
-                height="10"
+                width="14"
+                height="14"
                 viewBox="0 0 20 20"
                 fill="none"
                 className="inline-block"
@@ -255,7 +358,7 @@ function ProjectCard({ project }: { project: Project }) {
             </a>
           )}
           {!project.repoUrl && !project.liveUrl && (
-            <span className="label-mono text-[#222] text-[10px]">SOON</span>
+            <span className="px-4 py-2 label-mono text-[#222] text-xs">SOON</span>
           )}
         </div>
       </div>
@@ -280,5 +383,173 @@ function StatusBadge({ status }: { status: Project["status"] }) {
         {status}
       </span>
     </div>
+  );
+}
+
+function ProjectModal({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) {
+  const photos = project.photos ?? [];
+  const [index, setIndex] = useState(0);
+
+  const prev = useCallback(() => {
+    if (photos.length === 0) return;
+    setIndex((i) => (i - 1 + photos.length) % photos.length);
+  }, [photos.length]);
+
+  const next = useCallback(() => {
+    if (photos.length === 0) return;
+    setIndex((i) => (i + 1) % photos.length);
+  }, [photos.length]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose, prev, next]);
+
+  const photo = photos[index];
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+        onClick={onClose}
+      />
+
+      {/* Modal */}
+      <div className="relative z-10 w-full max-w-5xl bg-[#0a0a0a] border border-[#1a1a1a]">
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#111]">
+          <div className="label-mono text-[#555] text-xs tracking-widest">
+            {project.num} / {project.title}
+          </div>
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="text-[#444] hover:text-white transition-colors"
+          >
+            <CloseIcon />
+          </button>
+        </div>
+
+        {photos.length > 0 && photo ? (
+          <>
+            {/* Main image */}
+            <div className="relative w-full aspect-[8/5] bg-[#080808]">
+              <Image
+                src={photo.src}
+                alt={photo.caption}
+                fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+              />
+              <button
+                onClick={prev}
+                aria-label="Previous photo"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-[#222] bg-black/60 text-[#666] hover:text-white hover:border-[#555] transition-colors"
+              >
+                <ArrowIcon direction="left" />
+              </button>
+              <button
+                onClick={next}
+                aria-label="Next photo"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-[#222] bg-black/60 text-[#666] hover:text-white hover:border-[#555] transition-colors"
+              >
+                <ArrowIcon direction="right" />
+              </button>
+            </div>
+
+            {/* Caption */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#111]">
+              <span className="label-mono text-[#555] text-xs tracking-widest">
+                {photo.caption}
+              </span>
+              <span className="label-mono text-[#333] text-xs">
+                {String(index + 1).padStart(2, "0")} /{" "}
+                {String(photos.length).padStart(2, "0")}
+              </span>
+            </div>
+
+            {/* Thumbnails */}
+            <div className="flex gap-2 px-6 py-4 overflow-x-auto">
+              {photos.map((p, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  className={`shrink-0 border transition-all ${
+                    i === index
+                      ? "border-[#888]"
+                      : "border-transparent opacity-40 hover:opacity-80"
+                  }`}
+                >
+                  <div className="w-24 aspect-[8/5] relative">
+                    <Image
+                      src={p.src}
+                      alt={p.caption}
+                      fill
+                      sizes="96px"
+                      className="object-cover"
+                    />
+                  </div>
+                </button>
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="py-20 text-center label-mono text-[#444]">
+            PHOTOS WILL BE ADDED LATER
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+      <path
+        d="M5 5l10 10M15 5L5 15"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="square"
+      />
+    </svg>
+  );
+}
+
+function ArrowIcon({ direction }: { direction: "left" | "right" }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+      {direction === "left" ? (
+        <path
+          d="M12 4L6 10l6 6"
+          stroke="currentColor"
+          strokeWidth="1.2"
+          strokeLinecap="square"
+        />
+      ) : (
+        <path
+          d="M8 4l6 6-6 6"
+          stroke="currentColor"
+          strokeWidth="1.2"
+          strokeLinecap="square"
+        />
+      )}
+    </svg>
   );
 }
