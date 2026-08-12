@@ -289,7 +289,7 @@ function ProjectCard({
       <p className="label-mono text-[#444] mb-4">{project.subtitle}</p>
 
       {/* Description */}
-      <p className="text-[#3a3a3a] text-xs leading-relaxed mb-6 font-mono">
+      <p className="text-[#555] text-xs leading-relaxed mb-6 font-mono">
         {project.description}
       </p>
 

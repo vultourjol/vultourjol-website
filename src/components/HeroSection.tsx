@@ -42,7 +42,7 @@ export default function HeroSection() {
         {/* Status badge */}
         <div className="animate-fade-in-up delay-100 inline-flex items-center gap-2 mb-12 px-4 py-2 border border-[#222] bg-[#0f0f0f]">
           <span className="w-1.5 h-1.5 bg-white pulse-dot inline-block" />
-          <span className="label-mono text-[#666]">ONLINE // AVAILABLE</span>
+          <span className="label-mono text-[#666]">ONLINE</span>
         </div>
 
         {/* Name */}
@@ -56,7 +56,7 @@ export default function HeroSection() {
         {/* Divider line with label */}
         <div className="animate-fade-in-up delay-300 flex items-center justify-center gap-4 mb-4">
           <div className="h-px w-20 bg-linear-to-r from-transparent to-[#333]" />
-          <span className="label-mono text-[#555]">.//dnVsdG91cmpvbA==.</span>
+          <span className="label-mono text-[#555]">.//dnVsdG91cmpvbA==</span>
           <div className="h-px w-20 bg-linear-to-l from-transparent to-[#333]" />
         </div>
 
@@ -90,22 +90,6 @@ export default function HeroSection() {
             Contact
           </button>
         </div>
-
-        {/* Skills marquee
-        <div className="animate-fade-in-up delay-700 mt-24 overflow-hidden">
-          <div className="flex gap-0">
-            <div className="marquee-track flex gap-0 shrink-0">
-              {[...skills, ...skills].map((s, i) => (
-                <span
-                  key={i}
-                  className="shrink-0 label-mono text-[#2a2a2a] px-6 border-r border-[#1a1a1a] py-2"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div> */}
       </div>
 
       {/* Scroll indicator */}

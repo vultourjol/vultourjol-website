@@ -31,7 +31,7 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
           scrolled
-            ? "bg-[#080808]/90 backdrop-blur-md border-[#1a1a1a]"
+            ? "bg-[#080808] border-[#1a1a1a]"
             : "bg-transparent border-transparent"
         }`}
       >
@@ -43,19 +43,6 @@ export default function Header() {
           >
             VULTOURJOL
           </button>
-
-          {/* Desktop Nav */}
-          {/* <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => handleNav(item.href)}
-                className="label-mono text-[#666] hover:text-[#f0f0f0] transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav> */}
 
           {/* Menu Button */}
           <button

@@ -19,16 +19,7 @@ export default function AboutSection() {
   return (
     <section className="relative py-40 px-6 overflow-hidden" id="about">
       {/* bg */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 pixel-grid-dense opacity-20" />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 20% 50%, #0d0d0d 0%, transparent 70%)",
-          }}
-        />
-      </div>
+      <div className="absolute inset-0 pixel-grid-dense opacity-40 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
@@ -77,10 +68,10 @@ export default function AboutSection() {
             </div>
 
             <div className="space-y-4">
-              <p className="text-[#666] text-sm font-mono leading-relaxed">
+              <p className="text-[#777] text-sm font-mono leading-relaxed">
                 Hi, I’m <span className="text-[#ccc]">Egor</span> — a student on the School of Computer Science. I’m passionate about developing web applications and solving algorithmic problems.
               </p>
-              <p className="text-[#444] text-sm font-mono leading-relaxed">
+              <p className="text-[#777] text-sm font-mono leading-relaxed">
                 In my spare time, I take part in hackathons, learn about new technologies and work on my own projects. I’m looking for opportunities for internships and collaboration.
               </p>
             </div>
@@ -104,7 +95,7 @@ export default function AboutSection() {
           <div className="reveal-slide-right space-y-12">
             {/* Tech Stack */}
             <div>
-              <div className="label-mono text-[#333] mb-6">TECH STACK</div>
+              <div className="label-mono text-[#777] mb-6">TECH STACK</div>
               <div className="grid grid-cols-2 gap-px bg-[#111]">
                 {stack.map((s) => (
                   <div key={s.cat} className="bg-[#080808] p-4">
@@ -131,10 +122,10 @@ export default function AboutSection() {
 
             {/* Timeline */}
             <div>
-              <div className="label-mono text-[#333] mb-6">JOURNEY</div>
+              <div className="label-mono text-[#777] mb-6">JOURNEY</div>
               <div className="relative space-y-0">
                 {/* vertical line */}
-                <div className="absolute left-8 top-0 bottom-0 w-px bg-[#1a1a1a]" />
+                <div className="absolute left-8 top-0 bottom-0 w-px bg-[#555]" />
                 {timeline.map((t, i) => (
                   <div key={t.year} className="flex gap-6 relative">
                     {/* dot */}
@@ -143,7 +134,7 @@ export default function AboutSection() {
                         className={`w-2 h-2 border ${
                           i === timeline.length - 1
                             ? "border-[#555] bg-[#555]"
-                            : "border-[#222] bg-[#080808]"
+                            : "border-[#555] bg-[#080808]"
                         }`}
                       />
                     </div>
@@ -155,7 +146,7 @@ export default function AboutSection() {
                       <div className="text-[#888] text-xs font-mono mb-0.5">
                         {t.label}
                       </div>
-                      <div className="text-[#3a3a3a] text-xs font-mono">{t.desc}</div>
+                      <div className="text-[#444] text-xs font-mono">{t.desc}</div>
                     </div>
                   </div>
                 ))}
