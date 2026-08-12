@@ -32,9 +32,9 @@ export default function NotFound() {
       {/* Main content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Status badge */}
-        <div className="animate-fade-in-up delay-100 inline-flex items-center gap-2 mb-12 px-4 py-2 border border-[#222] bg-[#0f0f0f]">
+        <div className="animate-fade-in-up delay-100 inline-flex items-center gap-2 mb-12 px-4 py-2 border border-[#333] bg-[#0f0f0f]">
           <span className="w-1.5 h-1.5 bg-[#ff6b6b] pulse-dot inline-block" />
-          <span className="label-mono text-[#666]">ERROR // 404</span>
+          <span className="label-mono text-[#7a7a7a]">ERROR // 404</span>
         </div>
 
         {/* 404 */}
@@ -48,20 +48,20 @@ export default function NotFound() {
         {/* Divider line with label */}
         <div className="animate-fade-in-up delay-300 flex items-center justify-center gap-4 mb-6">
           <div className="h-px w-20 bg-linear-to-r from-transparent to-[#333]" />
-          <span className="label-mono text-[#555]">.//not.found.</span>
+          <span className="label-mono text-[#6f6f6f]">.//not.found.</span>
           <div className="h-px w-20 bg-linear-to-l from-transparent to-[#333]" />
         </div>
 
         {/* Message */}
         <h2
-          className="animate-fade-in-up delay-300 text-2xl md:text-4xl font-light tracking-tighter text-[#555] mb-8 leading-none"
+          className="animate-fade-in-up delay-300 text-2xl md:text-4xl font-light tracking-tighter text-[#6f6f6f] mb-8 leading-none"
           style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
         >
           PAGE NOT FOUND
         </h2>
 
         {/* Description */}
-        <p className="animate-fade-in-up delay-400 text-[#555] text-sm md:text-base max-w-md mx-auto mb-16 leading-relaxed label-mono">
+        <p className="animate-fade-in-up delay-400 text-[#6f6f6f] text-sm md:text-base max-w-md mx-auto mb-16 leading-relaxed label-mono">
           Segmentation fault. The page you are
           <br />
           looking for does not exist.
@@ -78,7 +78,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/#showroom"
-            className="px-8 py-3 border border-[#333] text-[#888] text-xs tracking-widest uppercase font-mono hover:border-[#555] hover:text-[#ccc] transition-all"
+            className="px-8 py-3 border border-[#4a4a4a] text-[#9a9a9a] text-xs tracking-widest uppercase font-mono hover:border-[#666] hover:text-[#ccc] transition-all"
           >
             Showroom
           </Link>
@@ -103,10 +103,10 @@ function CornerDecor({ position }: { position: string }) {
     <div className={`absolute ${posClass} pointer-events-none`}>
       <div className="relative w-8 h-8">
         <div
-          className={`absolute ${isRight ? "right-0" : "left-0"} ${isBottom ? "bottom-0" : "top-0"} w-4 h-px bg-[#333]`}
+          className={`absolute ${isRight ? "right-0" : "left-0"} ${isBottom ? "bottom-0" : "top-0"} w-4 h-px bg-[#4a4a4a]`}
         />
         <div
-          className={`absolute ${isRight ? "right-0" : "left-0"} ${isBottom ? "bottom-0" : "top-0"} w-px h-4 bg-[#333]`}
+          className={`absolute ${isRight ? "right-0" : "left-0"} ${isBottom ? "bottom-0" : "top-0"} w-px h-4 bg-[#4a4a4a]`}
         />
       </div>
     </div>

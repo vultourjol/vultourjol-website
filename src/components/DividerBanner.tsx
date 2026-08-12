@@ -7,7 +7,7 @@ export default function DividerBanner({ text }: { text: string }) {
           {Array(2)
             .fill(repeated)
             .map((t, i) => (
-              <span key={i} className="shrink-0 label-mono text-[#1f1f1f] px-8 text-xs">
+              <span key={i} className="shrink-0 label-mono text-[#2f2f2f] px-8 text-xs">
                 {t}
               </span>
             ))}

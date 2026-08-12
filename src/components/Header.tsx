@@ -79,10 +79,10 @@ export default function Header() {
         <div className="absolute inset-0 pixel-grid opacity-20 pointer-events-none" />
 
         {/* Corner labels */}
-        <span className="absolute top-20 left-6 label-mono text-[#333]">
+        <span className="absolute top-20 left-6 label-mono text-[#4a4a4a]">
           NAV / 00{navItems.length}
         </span>
-        <span className="absolute bottom-8 right-6 label-mono text-[#333]">
+        <span className="absolute bottom-8 right-6 label-mono text-[#4a4a4a]">
           PORTFOLIO v2.8
         </span>
 
@@ -91,9 +91,9 @@ export default function Header() {
             <button
               key={item.href}
               onClick={() => handleNav(item.href)}
-              className="group flex items-center gap-4 text-[#888] hover:text-white transition-all duration-300"
+              className="group flex items-center gap-4 text-[#9a9a9a] hover:text-white transition-all duration-300"
             >
-              <span className="label-mono text-[#333] group-hover:text-[#555] transition-colors w-6 text-right">
+              <span className="label-mono text-[#4a4a4a] group-hover:text-[#6f6f6f] transition-colors w-6 text-right">
                 0{i + 1}
               </span>
               <span
@@ -102,7 +102,7 @@ export default function Header() {
               >
                 {item.label}
               </span>
-              <span className="label-mono text-[#222] group-hover:text-[#444] transition-colors text-xs">
+              <span className="label-mono text-[#333] group-hover:text-[#5f5f5f] transition-colors text-xs">
                 →
               </span>
             </button>

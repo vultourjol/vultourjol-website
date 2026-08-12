@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import GridRunners from "./GridRunners";
 
 interface ProjectPhoto {
   src: string;
@@ -166,30 +167,35 @@ export default function ShowroomSection() {
   return (
     <section id="showroom" className="relative py-40 px-6">
       {/* Subtle grid bg */}
-      <div className="absolute inset-0 pixel-grid-dense opacity-40 pointer-events-none" />
+      <GridRunners />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section header */}
         <div className="reveal-slide-up mb-24">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-8 h-px bg-[#333]" />
-            <span className="label-mono text-[#444]">002 / SHOWROOM</span>
+            <div className="w-8 h-px bg-[#4a4a4a]" />
+            <span className="label-mono text-[#5f5f5f]">002 / SHOWROOM</span>
           </div>
-          <h2
-            className="text-5xl md:text-7xl font-light tracking-tighter text-white leading-none"
-            style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
-          >
-            My
-            <br />
-            <span className="text-[#333]">Projects</span>
-          </h2>
-          <p className="mt-6 text-[#444] text-sm max-w-md label-mono leading-relaxed">
+          <div className="flex items-end justify-between gap-6">
+            <h2
+              className="text-5xl md:text-7xl font-light tracking-tighter text-white leading-none"
+              style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
+            >
+              My
+              <br />
+              <span className="text-[#4a4a4a]">Projects</span>
+            </h2>
+            <span className="label-mono text-[#4a4a4a] text-xs hidden md:block pb-2">
+              $ ls ./projects
+            </span>
+          </div>
+          <p className="mt-6 text-[#5f5f5f] text-sm max-w-md label-mono leading-relaxed">
             Photos, links and descriptions will be added as they become available.
           </p>
         </div>
 
         {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#151515]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2a2a2a] border border-[#2a2a2a]">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
@@ -201,11 +207,11 @@ export default function ShowroomSection() {
 
         {/* Bottom label */}
         <div className="reveal-on-scroll mt-16 flex items-center justify-between">
-          <span className="label-mono text-[#2a2a2a]">
+          <span className="label-mono text-[#3a3a3a]">
             {projects.length} PROJECTS / UPDATED
           </span>
           <div className="flex items-center gap-3">
-            <span className="label-mono text-[#2a2a2a]">STATUSES:</span>
+            <span className="label-mono text-[#3a3a3a]">STATUSES:</span>
             {(["LIVE", "WIP", "CONCEPT"] as const).map((s) => (
               <span key={s} className="flex items-center gap-1.5">
                 <span
@@ -245,11 +251,11 @@ function ProjectCard({
           onOpen();
         }
       }}
-      className="scale-on-scroll group relative bg-[#080808] p-8 card-hover cursor-pointer border border-transparent hover:border-[#1f1f1f]"
+      className="scale-on-scroll group relative bg-[#080808] p-8 card-hover cursor-pointer border border-transparent hover:border-[#4a4a4a]"
     >
       {/* Number */}
       <div className="flex items-center justify-between mb-8">
-        <span className="label-mono text-[#222] text-2xl font-light">
+        <span className="label-mono text-[#333] text-2xl font-light">
           {project.num}
         </span>
         <StatusBadge status={project.status} />
@@ -270,14 +276,14 @@ function ProjectCard({
             {/* Pixel art placeholder pattern */}
             <div className="absolute inset-0 pixel-grid opacity-30" />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-              <div className="text-[#222] text-xs label-mono">[ PHOTO / SCREENSHOT ]</div>
-              <div className="text-[#1a1a1a] text-[10px] label-mono">PLACEHOLDER</div>
+              <div className="text-[#333] text-xs label-mono">[ PHOTO / SCREENSHOT ]</div>
+              <div className="text-[#3a3a3a] text-[10px] label-mono">PLACEHOLDER</div>
             </div>
             {/* Corner pixels */}
-            <div className="absolute top-2 left-2 w-1.5 h-1.5 bg-[#222]" />
-            <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-[#222]" />
-            <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-[#222]" />
-            <div className="absolute bottom-2 right-2 w-1.5 h-1.5 bg-[#222]" />
+            <div className="absolute top-2 left-2 w-1.5 h-1.5 bg-[#333]" />
+            <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-[#333]" />
+            <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-[#333]" />
+            <div className="absolute bottom-2 right-2 w-1.5 h-1.5 bg-[#333]" />
           </>
         )}
       </div>
@@ -286,10 +292,10 @@ function ProjectCard({
       <h3 className="text-white text-sm tracking-widest mb-1 font-mono group-hover:text-white transition-colors">
         {project.title}
       </h3>
-      <p className="label-mono text-[#444] mb-4">{project.subtitle}</p>
+      <p className="label-mono text-[#5f5f5f] mb-4">{project.subtitle}</p>
 
       {/* Description */}
-      <p className="text-[#555] text-xs leading-relaxed mb-6 font-mono">
+      <p className="text-[#6f6f6f] text-xs leading-relaxed mb-6 font-mono">
         {project.description}
       </p>
 
@@ -298,7 +304,7 @@ function ProjectCard({
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="px-2 py-0.5 border border-[#1f1f1f] label-mono text-[#333] text-[10px]"
+            className="px-2 py-0.5 border border-[#3a3a3a] label-mono text-[#4a4a4a] text-[10px]"
           >
             {tag}
           </span>
@@ -307,13 +313,13 @@ function ProjectCard({
 
       {/* Links */}
       <div className="flex items-center justify-between">
-        <span className="label-mono text-[#2a2a2a]">{project.year}</span>
+        <span className="label-mono text-[#3a3a3a]">{project.year}</span>
         <div className="flex gap-3">
           {project.repoUrl && (
             <a
               href={project.repoUrl}
               onClick={(e) => e.stopPropagation()}
-              className="px-4 py-2 border border-[#1f1f1f] label-mono text-[#666] hover:text-[#f0f0f0] hover:border-[#555] transition-all text-xs flex items-center gap-2"
+              className="px-4 py-2 border border-[#3a3a3a] label-mono text-[#7a7a7a] hover:text-[#f0f0f0] hover:border-[#666] transition-all text-xs flex items-center gap-2"
             >
               REPO{" "}
               <svg
@@ -337,7 +343,7 @@ function ProjectCard({
             <a
               href={project.liveUrl}
               onClick={(e) => e.stopPropagation()}
-              className="px-4 py-2 border border-[#1f1f1f] label-mono text-[#666] hover:text-[#f0f0f0] hover:border-[#555] transition-all text-xs flex items-center gap-2"
+              className="px-4 py-2 border border-[#3a3a3a] label-mono text-[#7a7a7a] hover:text-[#f0f0f0] hover:border-[#666] transition-all text-xs flex items-center gap-2"
             >
               LIVE{" "}
               <svg
@@ -358,7 +364,7 @@ function ProjectCard({
             </a>
           )}
           {!project.repoUrl && !project.liveUrl && (
-            <span className="px-4 py-2 label-mono text-[#222] text-xs">SOON</span>
+            <span className="px-4 py-2 label-mono text-[#333] text-xs">SOON</span>
           )}
         </div>
       </div>
@@ -434,13 +440,13 @@ function ProjectModal({
       <div className="relative z-10 w-full max-w-5xl bg-[#0a0a0a] border border-[#1a1a1a]">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#111]">
-          <div className="label-mono text-[#555] text-xs tracking-widest">
+          <div className="label-mono text-[#6f6f6f] text-xs tracking-widest">
             {project.num} / {project.title}
           </div>
           <button
             onClick={onClose}
             aria-label="Close"
-            className="text-[#444] hover:text-white transition-colors"
+            className="text-[#5f5f5f] hover:text-white transition-colors"
           >
             <CloseIcon />
           </button>
@@ -461,10 +467,10 @@ function ProjectModal({
 
             {/* Caption */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-[#111]">
-              <span className="label-mono text-[#555] text-xs tracking-widest">
+              <span className="label-mono text-[#6f6f6f] text-xs tracking-widest">
                 {photo.caption}
               </span>
-              <span className="label-mono text-[#333] text-xs">
+              <span className="label-mono text-[#4a4a4a] text-xs">
                 {String(index + 1).padStart(2, "0")} /{" "}
                 {String(photos.length).padStart(2, "0")}
               </span>
@@ -496,7 +502,7 @@ function ProjectModal({
             </div>
           </>
         ) : (
-          <div className="py-20 text-center label-mono text-[#444]">
+          <div className="py-20 text-center label-mono text-[#5f5f5f]">
             PHOTOS WILL BE ADDED LATER
           </div>
         )}

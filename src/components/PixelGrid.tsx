@@ -38,8 +38,8 @@ export default function PixelGrid() {
           y: y + Math.random() * 10 - 5,
           vx: (Math.random() - 0.5) * 0.15,
           vy: (Math.random() - 0.5) * 0.15,
-          size: Math.random() < 0.3 ? 2 : 1,
-          opacity: Math.random() * 0.4 + 0.1,
+          size: Math.random() < 0.3 ? 4 : 2,
+          opacity: Math.random() * 0.5 + 0.4,
         });
       }
     }
@@ -60,14 +60,14 @@ export default function PixelGrid() {
       }
 
       // Draw connections
-      ctx.lineWidth = 0.5;
+      ctx.lineWidth = 1;
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const a = nodes[i];
           const b = nodes[j];
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
           if (dist < GRID * 1.5) {
-            const alpha = (1 - dist / (GRID * 1.5)) * 0.12;
+            const alpha = (1 - dist / (GRID * 1.5)) * 0.35;
             ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -103,7 +103,7 @@ export default function PixelGrid() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 pointer-events-none"
-      style={{ opacity: 1 }}
+      style={{ opacity: 0.50 }}
     />
   );
 }
