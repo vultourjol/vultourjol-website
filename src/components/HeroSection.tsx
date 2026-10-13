@@ -51,7 +51,7 @@ export default function HeroSection() {
           className="animate-fade-in-up delay-200 text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter text-white mb-2 leading-none"
           style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
         >
-          EGOR
+          VULTOURJOL
         </h1>
 
         {/* Divider line with label */}
@@ -62,12 +62,12 @@ export default function HeroSection() {
         </div>
 
         {/* Surname */}
-        <h2
+        {/*<h2
           className="animate-fade-in-up delay-300 text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter text-[#4a4a4a] mb-16 leading-none"
           style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
         >
-          NURULLIN
-        </h2>
+          EGOR NURULLIN
+        </h2>*/}
 
         {/* Description */}
         <p className="animate-fade-in-up delay-400 text-[#6f6f6f] text-sm md:text-base max-w-md mx-auto mb-16 leading-relaxed label-mono">

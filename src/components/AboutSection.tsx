@@ -37,7 +37,6 @@ export default function AboutSection() {
             >
               About{" "}
               <span className="text-[#4a4a4a]">me</span>
-              <span className="inline-block w-1.5 md:w-2 h-8 md:h-12 bg-[#5a5a5a] blink align-top ml-1" />
             </h2>
             <span className="label-mono text-[#4a4a4a] text-xs hidden md:block pb-2">
               $ cat ./about.txt

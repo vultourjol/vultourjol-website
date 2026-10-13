@@ -90,7 +90,7 @@ const projects: Project[] = [
     num: "04",
     title: "media-downloader",
     subtitle: "Desktop application",
-    tags: ["arm64", "yt-dlp", "ffmpeg", "ffprobe", "deno"],
+    tags: ["Swift", "arm64", "yt-dlp", "ffmpeg", "ffprobe", "deno"],
     year: "2026",
     status: "LIVE",
     description:
