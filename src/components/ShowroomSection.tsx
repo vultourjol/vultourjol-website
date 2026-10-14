@@ -95,7 +95,6 @@ const projects: Project[] = [
     status: "LIVE",
     description:
       "A macOS application for downloading any media (videos and audio from them) up to 4K. Apple silicon only.",
-    liveUrl: "https://archive.org/download/media-downloader-1.10_202610/media-downloader-1.10.dmg",
     photos: [
       { src: "/images/project-4/4.1.webp", caption: "SCREENSHOT 01" },
       { src: "/images/project-4/4.2.webp", caption: "SCREENSHOT 02" },
@@ -108,7 +107,7 @@ const projects: Project[] = [
     title: "PROJECT_ALPHA",
     subtitle: "Open Source",
     tags: ["..//LOADING..", "..//00110100 00110000 00110100.."],
-    year: "2026",
+    year: "202-",
     status: "CONCEPT",
     description:
       "Open source project in development. Ideas and concepts are being formed.",
@@ -119,7 +118,7 @@ const projects: Project[] = [
     title: "PROJECT_BETA",
     subtitle: "Open Source",
     tags: ["..//LOADING..", "..//00110100 00110000 00110100.."],
-    year: "2026",
+    year: "202-",
     status: "CONCEPT",
     description:
       "Open source project in development. Ideas and concepts are being formed.",
