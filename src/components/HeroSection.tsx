@@ -61,18 +61,10 @@ export default function HeroSection() {
           <div className="h-px w-20 bg-linear-to-l from-transparent to-[#333]" />
         </div>
 
-        {/* Surname */}
-        {/*<h2
-          className="animate-fade-in-up delay-300 text-6xl md:text-8xl lg:text-9xl font-light tracking-tighter text-[#4a4a4a] mb-16 leading-none"
-          style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
-        >
-          EGOR NURULLIN
-        </h2>*/}
-
         {/* Description */}
         <p className="animate-fade-in-up delay-400 text-[#6f6f6f] text-sm md:text-base max-w-md mx-auto mb-16 leading-relaxed label-mono">
-          I create digital products with a focus<br />
-          on performance and clean code
+          Разработка цифровых продуктов с фокусом<br />
+          на производительность
         </p>
 
         {/* CTA buttons */}
@@ -81,21 +73,21 @@ export default function HeroSection() {
             onClick={scrollToShowroom}
             className="group flex items-center gap-3 px-8 py-3 bg-white text-black text-xs tracking-widest uppercase font-mono hover:bg-[#e0e0e0] transition-colors"
           >
-            <span>View works</span>
+            <span>Посмотреть работы</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </button>
           <button
             onClick={() => document.querySelector("#contacts")?.scrollIntoView({ behavior: "smooth" })}
             className="px-8 py-3 bg-black border border-[#4a4a4a] text-[#9a9a9a] text-xs tracking-widest uppercase font-mono hover:border-[#666] hover:text-[#ccc] transition-all"
           >
-            Contact
+            Контакты
           </button>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-fade-in-up delay-900">
-        <span className="label-mono text-[#5f5f5f] text-[10px]">SCROLL</span>
+        <span className="label-mono text-[#5f5f5f] text-[10px]">СКРОЛЛ</span>
         <div className="w-px h-12 bg-linear-to-b from-[#444] to-transparent" />
       </div>
     </section>

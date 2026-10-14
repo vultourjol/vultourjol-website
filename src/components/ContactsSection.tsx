@@ -6,13 +6,13 @@ import GridRunners from "./GridRunners";
 const contacts = [
   {
     id: "phone",
-    label: "PHONE",
+    label: "ТЕЛЕФОН",
     value: "+7 (929) 631-15-04",
     display: "+7 929 631 15 04",
     icon: PhoneIcon,
     action: "tel:+79296311504",
-    actionLabel: "CALL",
-    hint: "Available: 10:00 – 22:00",
+    actionLabel: "ПОЗВОНИТЬ",
+    hint: "Доступен: 10:00 – 22:00",
   },
   {
     id: "telegram",
@@ -21,8 +21,8 @@ const contacts = [
     display: "@vultourjol",
     icon: TelegramIcon,
     action: "https://t.me/vultourjol",
-    actionLabel: "WRITE",
-    hint: "I respond within an hour",
+    actionLabel: "НАПИСАТЬ",
+    hint: "Отвечаю в течении часа",
   },
   {
     id: "email",
@@ -31,8 +31,8 @@ const contacts = [
     display: "vultourjol@yandex.ru",
     icon: MailIcon,
     action: "mailto:vultourjol@yandex.ru",
-    actionLabel: "SEND EMAIL",
-    hint: "For official inquiries",
+    actionLabel: "ОТПРАВИТЬ EMAIL",
+    hint: "Для официальных запросов",
   },
 ];
 
@@ -63,25 +63,25 @@ export default function ContactsSection() {
         <div className="reveal-slide-up mb-24">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-8 h-px bg-[#4a4a4a]" />
-            <span className="label-mono text-[#5f5f5f]">003 / CONTACTS</span>
+            <span className="label-mono text-[#5f5f5f]">003 / КОНТАКТЫ</span>
           </div>
           <div className="flex items-end justify-between gap-6">
             <h2
               className="text-5xl md:text-7xl font-light tracking-tighter text-white leading-none"
               style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
             >
-              My
+              Мои
               <br />
-              <span className="text-[#4a4a4a]">Contacts</span>
+              <span className="text-[#4a4a4a]">Контакты</span>
             </h2>
             <span className="label-mono text-[#4a4a4a] text-xs hidden md:block pb-2">
               $ telnet contact
             </span>
           </div>
           <p className="mt-6 text-[#5f5f5f] text-sm max-w-sm label-mono leading-relaxed">
-            Open to new projects,
+            Открыт для новых проектов,
             <br />
-            internships and collaboration.
+            стажировки и сотрудничества.
           </p>
         </div>
 
@@ -99,9 +99,9 @@ export default function ContactsSection() {
 
         {/* Extra info row */}
         <div className="reveal-on-scroll mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-[#111] pt-12">
-          <InfoItem label="LOCATION" value="Moscow, Russia" />
-          <InfoItem label="TIME ZONE" value="UTC+3 (MSK)" />
-          <InfoItem label="STATUS" value="Student / Freelancer" />
+          <InfoItem label="ЛОКАЦИЯ" value="Москва, Россия" />
+            <InfoItem label="ЧАСОВОЙ ПОЯС" value="UTC+3 (МСК)" />
+          <InfoItem label="СТАТУС" value="Студент / Фрилансер" />
         </div>
 
         {/* GitHub link */}
@@ -125,7 +125,7 @@ export default function ContactsSection() {
       <div className="relative z-10 max-w-7xl mx-auto mt-32 pt-8 border-t border-[#111]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="label-mono text-[#333] text-[10px]">
-            © 2026 VULTOURJOL — PORTFOLIO
+            © 2026 VULTOURJOL — ПОРТФОЛИО
           </span>
           <span className="label-mono text-[#3a3a3a] text-[10px]">
             BUILT WITH NEXT.JS + REACT AND LOVE <span className="text-[#ff6b6b]">♥</span>

@@ -8,13 +8,13 @@ const stack = [
   { cat: "FRONTEND", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
   { cat: "BACKEND", items: ["Node.js", "Python", "FastAPI", "PostgreSQL"] },
   { cat: "DEVOPS", items: ["Git", "Docker", "Linux", "CI/CD"] },
-  { cat: "OTHER", items: ["Algorithms", "OOP", "REST API", "GraphQL"] },
+  { cat: "OTHER", items: ["Алгоритмы", "OOP", "REST API", "GraphQL"] },
 ];
 
 const timeline = [
-  { year: "2024", label: "The beginning", desc: "First lines of code in Python" },
-  { year: "2025", label: "Web development", desc: "HTML / CSS / JavaScript / React" },
-  { year: "2026", label: "Currently", desc: "CS student, active development" },
+  { year: "2024", label: "Начало", desc: "Первые строки кода на Python" },
+  { year: "2025", label: "Веб разработка", desc: "HTML / CSS / JavaScript / React" },
+  { year: "2026", label: "Сегодня", desc: "Студент, активная разработка" },
 ];
 
 export default function AboutSection() {
@@ -28,15 +28,15 @@ export default function AboutSection() {
         <div className="reveal-slide-up mb-20">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-8 h-px bg-[#4a4a4a]" />
-            <span className="label-mono text-[#5f5f5f]">001 / ABOUT</span>
+            <span className="label-mono text-[#5f5f5f]">001 / БИО</span>
           </div>
           <div className="flex items-end justify-between gap-6">
             <h2
               className="text-5xl md:text-7xl font-light tracking-tighter text-white leading-none"
               style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
             >
-              About{" "}
-              <span className="text-[#4a4a4a]">me</span>
+              Обо{" "}
+              <span className="text-[#4a4a4a]">мне</span>
             </h2>
             <span className="label-mono text-[#4a4a4a] text-xs hidden md:block pb-2">
               $ cat ./about.txt
@@ -78,15 +78,15 @@ export default function AboutSection() {
             <TerminalFrame title="BIO.TXT">
               <div className="space-y-4">
                 <p className="text-[#8a8a8a] text-sm font-mono leading-relaxed">
-                  <span className="text-[#5f5f5f]">$</span> Hi, I’m{" "}
-                  <span className="text-[#ccc]">Egor</span> — a student on the
-                  School of Computer Science. I’m passionate about developing web
-                  applications and solving algorithmic problems.
+                  <span className="text-[#5f5f5f]">$</span> Привет, я{" "}
+                  <span className="text-[#ccc]">Егор</span> — студент факультета
+                  компьютерных наук. Я увлечен разработкой веб / десктоп
+                  приложений и решением алгоритмических проблем.
                 </p>
                 <p className="text-[#8a8a8a] text-sm font-mono leading-relaxed">
-                  In my spare time, I take part in hackathons, learn about new
-                  technologies and work on my own projects. I’m looking for
-                  opportunities for internships and collaboration.
+                  В свободное время я изучаю новые
+                  технологии и работаю над своими проектами. Ищу возможности
+                  для стажировки и сотрудничества.
                 </p>
               </div>
             </TerminalFrame>
@@ -95,9 +95,9 @@ export default function AboutSection() {
             <TerminalFrame title="STATS.TXT">
               <div className="grid grid-cols-3 gap-px bg-[#1a1a1a]">
                 {[
-                  { n: "3+", l: "years of coding experience" },
-                  { n: "5+", l: "projects" },
-                  { n: "∞", l: "interests" },
+                  { n: "3+", l: "лет опыта работы с кодом" },
+                  { n: "5+", l: "проектов" },
+                  { n: "∞", l: "интереса" },
                 ].map((s) => (
                   <div key={s.l} className="bg-[#0d0d0d] p-4 text-center">
                     <div className="text-2xl text-[#f0f0f0] font-mono mb-1">

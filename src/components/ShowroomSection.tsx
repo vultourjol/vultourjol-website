@@ -25,15 +25,15 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "proj-02",
+    id: "proj-01",
     num: "01",
     title: "16/9 CREATIVE STUDIO",
-    subtitle: "Website / Web Application",
+    subtitle: "Вебсайт / Веб Приложение",
     tags: ["React Native", "Node.js", "MongoDB"],
     year: "2026",
     status: "LIVE",
     description:
-      "A showcase website for a video production studio. ",
+      "Вебсайт шоукейс для студии видео продакшена.",
     repoUrl: "https://github.com/vultourjol/16-9-website",
     liveUrl: "https://16-9-website.vercel.app/",
     photos: [
@@ -46,15 +46,15 @@ const projects: Project[] = [
     ],
   },
   {
-    id: "proj-01",
+    id: "proj-02",
     num: "02",
     title: "PRODBYLELYA",
-    subtitle: "Website / Web Application",
+    subtitle: "Вебсайт / Веб Приложение",
     tags: ["HTML", "JavaScript", "TypeScript", "TailwindCSS"],
     year: "2024",
     status: "LIVE",
     description:
-      "A portfolio website for a producer and editor.",
+      "Сайт портфолио для продюсера / режиссёра монтажа.",
     repoUrl: "https://github.com/vultourjol/film-producer-website",
     liveUrl: "https://vultourjol.github.io/film-producer-website/",
     photos: [
@@ -69,12 +69,12 @@ const projects: Project[] = [
     id: "proj-03",
     num: "03",
     title: "boiler-online-store",
-    subtitle: "Website / Web Application",
+    subtitle: "Вебсайт / Веб Приложение",
     tags: ["HTML", "JavaScript", "TypeScript", "TailwindCSS"],
     year: "2025",
     status: "WIP",
     description:
-      "An online shop website selling heating boilers.",
+      "Вебсайт онлайн магазина по продаже отопительных котлов.",
     repoUrl: "https://github.com/vultourjol/boiler-online-store",
     liveUrl: "https://boiler-online-store.vercel.app/",
     photos: [
@@ -89,12 +89,12 @@ const projects: Project[] = [
     id: "proj-04",
     num: "04",
     title: "media-downloader",
-    subtitle: "Desktop application",
+    subtitle: "Десктоп приложение",
     tags: ["Swift", "arm64", "yt-dlp", "ffmpeg", "ffprobe", "deno"],
     year: "2026",
     status: "LIVE",
     description:
-      "A macOS application for downloading any media (videos and audio from them) up to 4K. Apple silicon only.",
+      "macOS приложение для загрузки любого медиа (видео и аудио). Только для apple silicon.",
     photos: [
       { src: "/images/project-4/4.1.webp", caption: "SCREENSHOT 01" },
       { src: "/images/project-4/4.2.webp", caption: "SCREENSHOT 02" },
@@ -110,7 +110,7 @@ const projects: Project[] = [
     year: "202-",
     status: "CONCEPT",
     description:
-      "Open source project in development. Ideas and concepts are being formed.",
+      "..//в разработке..",
   },
   {
     id: "proj-06",
@@ -121,7 +121,7 @@ const projects: Project[] = [
     year: "202-",
     status: "CONCEPT",
     description:
-      "Open source project in development. Ideas and concepts are being formed.",
+      "..//в разработке..",
   },
 ];
 
@@ -169,23 +169,23 @@ export default function ShowroomSection() {
         <div className="reveal-slide-up mb-24">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-8 h-px bg-[#4a4a4a]" />
-            <span className="label-mono text-[#5f5f5f]">002 / SHOWROOM</span>
+            <span className="label-mono text-[#5f5f5f]">002 / ШОУРУМ</span>
           </div>
           <div className="flex items-end justify-between gap-6">
             <h2
               className="text-5xl md:text-7xl font-light tracking-tighter text-white leading-none"
               style={{ fontFamily: "'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" }}
             >
-              My
+              Мои
               <br />
-              <span className="text-[#4a4a4a]">Projects</span>
+              <span className="text-[#4a4a4a]">Проекты</span>
             </h2>
             <span className="label-mono text-[#4a4a4a] text-xs hidden md:block pb-2">
               $ ls ./projects
             </span>
           </div>
           <p className="mt-6 text-[#5f5f5f] text-sm max-w-md label-mono leading-relaxed">
-            Photos, links and descriptions will be added as they become available.
+            Фото, ссылки и описание будут добавлены по мере доступности.
           </p>
         </div>
 
@@ -203,10 +203,10 @@ export default function ShowroomSection() {
         {/* Bottom label */}
         <div className="reveal-on-scroll mt-16 flex items-center justify-between">
           <span className="label-mono text-[#3a3a3a]">
-            {projects.length} PROJECTS / UPDATED
+            {projects.length} ПРОЕКТОВ / ОБНОВЛЕНО
           </span>
           <div className="flex items-center gap-3">
-            <span className="label-mono text-[#3a3a3a]">STATUSES:</span>
+            <span className="label-mono text-[#3a3a3a]">СТАТУСЫ:</span>
             {(["LIVE", "WIP", "CONCEPT"] as const).map((s) => (
               <span key={s} className="flex items-center gap-1.5">
                 <span

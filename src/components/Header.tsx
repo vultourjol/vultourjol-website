@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const navItems = [
-  { label: "MAIN", href: "#home" },
-  { label: "ABOUT", href: "#about" },
-  { label: "SHOWROOM", href: "#showroom" },
-  { label: "CONTACTS", href: "#contacts" },
+  { label: "ГЛАВНАЯ", href: "#home" },
+  { label: "ОБО МНЕ", href: "#about" },
+  { label: "ШОУРУМ", href: "#showroom" },
+  { label: "КОНТАКТЫ", href: "#contacts" },
 ];
 
 export default function Header() {
